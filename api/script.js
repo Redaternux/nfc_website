@@ -47,6 +47,9 @@ const storage = multer.diskStorage({
   }
 });
 
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
+
+
 
 
 const upload = multer({ storage });
@@ -65,7 +68,7 @@ app.post('/api/user', upload.single('image'), (req, res) => {
     }
 
     const userId = results.insertId;
-    res.json({ userId });
+    res.json({ userId, filename: image.filename });
   });
 });
 

@@ -70,7 +70,7 @@ const Mainsecond = () => {
 
       const response = await axios.post('http://localhost:5000/api/user', userData);
       const userId = response.data.userId;
-      // Handle the success response
+      navigate(`/user/${userId}`);
     } catch (error) {
       console.log(error);
       // Handle the error response
