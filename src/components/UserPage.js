@@ -31,6 +31,7 @@ const UserPage = () => {
         <p>Name: {userData.name}</p>
         <p>Email: {userData.email}</p>
         <p>Phone: {userData.phone}</p>
+        image: {userData.image}
       </div>
     );
   };
